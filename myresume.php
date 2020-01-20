@@ -77,6 +77,8 @@ function searchAll($table,...$arg){
     }
     .skill-table td {
         border: none;
+        word-break: break-all;
+        word-wrap: break-word;
     }
     .portfolio {
         padding: 0.8rem;
@@ -446,7 +448,7 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
                         <img src="./img/<?=$value['filename'];?>" class="card-img-top" alt="<?=$value['filename'];?>">
                         <div class="card-body">
                             <h6 class="card-title"><?=$value['name'];?></h6>
-                            <a href="<?=$value['url'];?>" class="btn btn-outline-secondary">前往網站</a>
+                            <a href="<?=$value['url'];?>" class="btn btn-outline-secondary" target="_blank">前往網站</a>
                         </div>
                     </div>
                 </div>

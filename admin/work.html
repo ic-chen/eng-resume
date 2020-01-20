@@ -85,28 +85,29 @@ $(function(){
     $('input.upt-btn').on('click',function(){
         let dom=$(this).parent().children().children()
         let upt_chked=dom.find('input').eq(0).prop('checked')
-        let upt_name=dom.find('input').eq(1).val()
-        let upt_url=dom.find('input').eq(2).val()
+        let upt_name=dom.find('input').eq(2).val()
+        let upt_url=dom.find('input').eq(3).val()
         let upt_id=$(this).attr('id')
         // console.log(upt_id)
 
-        // let file_data=dom.find('input').eq(1).prop('files')
+        let file_data=dom.find('input').eq(1).prop('files')[0]
         var form_data = new FormData()
-        // form_data.append('file', file_data)
+        form_data.append('file', file_data)
         form_data.append('upt_chked', upt_chked)
         form_data.append('upt_name', upt_name)
         form_data.append('upt_url', upt_url)
         form_data.append('upt_id', upt_id)
 
-        // console.log(form_data)
+        // console.log(upt_name, upt_url)
         $.ajax({
                 url: './api/update_work.php',
                 type: 'post',
                 cache: false,
                 contentType: false,
                 processData: false,
+                async: false,
                 data: form_data,
-                success: function(){
+                success: function(data){
                     window.location.replace("./admin.php?p=wo")
                 }
         })

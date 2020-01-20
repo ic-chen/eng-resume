@@ -79,12 +79,12 @@ $(function(){
     $('input.upt-btn').on('click',function(){
         let dom=$(this).parent().children().children()
         let upt_chked=dom.find('input').eq(0).prop('checked')
-        let upt_alt=dom.find('input').eq(1).val()
+        let upt_alt=dom.find('input').eq(2).val()
         let upt_id=$(this).attr('id')
 
-        // let file_data=dom.find('input').eq(1).prop('files')
+        let file_data=dom.find('input').eq(1).prop('files')[0]
         var form_data = new FormData()
-        // form_data.append('file', file_data)
+        form_data.append('file', file_data)
         form_data.append('upt_chked', upt_chked)
         form_data.append('upt_alt', upt_alt)
         form_data.append('upt_id', upt_id)
@@ -96,8 +96,9 @@ $(function(){
                 cache: false,
                 contentType: false,
                 processData: false,
+                async: false,
                 data: form_data,
-                success: function(){
+                success: function(data){
                     window.location.replace("./admin.php?p=im")
                 }
         })

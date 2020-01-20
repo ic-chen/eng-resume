@@ -46,8 +46,8 @@ $num++;
 <!-- 第三列 -->
 <div class="form-row">
     <div class="form-group col-md-12">
-        <label for="exampleFormControlFile1">請選擇一張圖片</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1" type="file" name="img">
+        <label for="img<?=$num;?>">請選擇一張圖片</label>
+        <input type="file" class="form-control-file" id="img<?=$num;?>" type="file" name="img">
     </div>
 </div>
 
