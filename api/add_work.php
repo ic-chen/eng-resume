@@ -12,7 +12,7 @@ if(!empty($_FILES) AND $_FILES['img']['error']==0) {
     $name=$_POST['name'];
     $url=$_POST['url'];
 
-    $sql="INSERT INTO `work`(`acct`,`filename`,`name`,`url`) 
+    $sql="INSERT INTO `eng_work`(`acct`,`filename`,`name`,`url`) 
     VALUES ('$acct','$filename','$name','$url')";
 
     echo $sql;

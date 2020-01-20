@@ -39,7 +39,7 @@ function searchAll($table,...$arg){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>履歷</title>
+    <title>Resume</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/all.css">
     <style>
@@ -92,10 +92,10 @@ function searchAll($table,...$arg){
 <?php
 // 找出使用者帳號
 $page=$_GET['p'];
-$data=search("user",["page"=>"$page"]);
+$data=search("eng_user",["page"=>"$page"]);
 $acct=$data['acct'];
 // 撈出求職條件
-$reqs=searchAll("reqs",["acct"=>"$acct", "see"=>"1"]);
+$reqs=searchAll("eng_reqs",["acct"=>"$acct", "see"=>"1"]);
 foreach($reqs as $value){
 ?>
     <!-- 求職條件 -->
@@ -103,33 +103,33 @@ foreach($reqs as $value){
         <div class="col-12 col-sm-10 col-md-12 col-lg-8">
             <div class="card border-secondary">
                 <div class="card-header text-white bg-secondary">
-                求職條件
+                Job Expectations
                 </div>
                 <div class="card-body">
                     <table class="table-reqs table table-borderless table-sm">
                     <tbody>
                         <tr>
-                        <th scope="row">期望職務</th>
+                        <th scope="row">Job</th>
                         <td><?=$value['reqs_posit'];?></td>
                         </tr>
                         <tr>
-                        <th scope="row">工作描述</th>
+                        <th scope="row">Job Description</th>
                         <td><?=$value['reqs_jd'];?></td>
                         </tr>
                         <tr>
-                        <th scope="row">可上班時間</th>
+                        <th scope="row">Notice Period</th>
                         <td><?=$value['reqs_time'];?></td>
                         </tr>
                         <tr>
-                        <th scope="row">期望工作地點</th>
+                        <th scope="row">Job Locations</th>
                         <td><?=$value['reqs_place'];?></td>
                         </tr>
                         <tr>
-                        <th scope="row">期望工作性質</th>
+                        <th scope="row">Employment Type</th>
                         <td><?=$value['reqs_type'];?></td>
                         </tr>
                         <tr>
-                        <th scope="row">期望薪資</th>
+                        <th scope="row">Expected Salary</th>
                         <td><?=$value['reqs_pay'];?></td>
                         </tr>
                     </tbody>
@@ -150,13 +150,13 @@ foreach($reqs as $value){
 
 <?php
 // 撈出頭像圖片
-$img=searchAll("img",["acct"=>"$acct", "see"=>"1"]);
+$img=searchAll("eng_img",["acct"=>"$acct", "see"=>"1"]);
 // 撈出自我介紹和自傳
-$s_intro=searchAll("s_intro",["acct"=>"$acct", "see"=>"1"]);
+$s_intro=searchAll("eng_s_intro",["acct"=>"$acct", "see"=>"1"]);
 // 撈出社群資料
-$social_m=searchAll("social_m",["acct"=>"$acct", "see"=>"1"]);
+$social_m=searchAll("eng_social_m",["acct"=>"$acct", "see"=>"1"]);
 // 撈出學歷資料
-$edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
+$edu=searchAll("eng_edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
 ?>
     <div class="resume row justify-content-center">
         <!-- 履歷左欄 -->
@@ -195,7 +195,7 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
             ?>
             <div class="contact card border-secondary mb-4">
                 <div class="card-header">
-                聯絡資訊
+                Contact Me
                 </div>
                 <div class="card-body">
                     <table class="table-contact table table-borderless table-sm">
@@ -268,7 +268,7 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
             <!-- 學歷資料 -->
             <div class="edu card border-secondary mb-4">
                 <div class="card-header">
-                學歷
+                Education
                 </div>
                 <div class="card-body">
                 <?php
@@ -312,7 +312,7 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
             ?>
             <div class="s_intro card border-secondary mb-4">
                 <div class="card-header">
-                自傳
+                Resume Objective
                 </div>
                 <div class="card-body">
                     <p><?=$v['bio'];?></p>
@@ -324,13 +324,13 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
             <!-- 工作技能 -->
             <div class="skill card border-secondary mb-4">
                 <div class="card-header">
-                工作技能
+                Skills
                 </div>
                 <div class="card-body">
 
                 <?php
                 // 撈出技能資料
-                $skill=searchAll("skill",["acct"=>"$acct", "see"=>"1"]);
+                $skill=searchAll("eng_skill",["acct"=>"$acct", "see"=>"1"]);
                 // 刪除重複的技能分類
                 $cat=array_column($skill,"cat");
                 $cat_unique=array_unique($cat);
@@ -340,8 +340,8 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
                 <thead>
                     <tr>
                     <th scope="col"><?=$category;?></th>
-                    <th scope="col">程度</th>
-                    <th scope="col">說明</th>
+                    <th scope="col">Level</th>
+                    <th scope="col">Description</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -373,12 +373,12 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
             <!-- 工作經歷 -->
             <div class="exp card border-secondary">
                 <div class="card-header">
-                工作經歷
+                Work Experience
                 </div>
                 <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <?php
-                    $exp=searchAll("exp",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
+                    $exp=searchAll("eng_exp",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
                     foreach($exp as $value) {
                     ?>
                     <li class="list-group-item">
@@ -400,7 +400,7 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
                     }
                     if(!empty($value['jd'])) {
                     ?>
-                        <br><i class="fas fa-caret-right fa-lg"></i> 說明：<?=$value['jd'];?>
+                        <br><i class="fas fa-caret-right fa-lg"></i> JD: <?=$value['jd'];?>
                     <?php
                     }
                     ?>
@@ -415,7 +415,7 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
     </div>
     <!-- 分隔線 -->
     <?php
-    $count=$pdo->query("SELECT COUNT(*) FROM `work` WHERE `acct`='$acct' && `see`='1'")->fetch();
+    $count=$pdo->query("SELECT COUNT(*) FROM `eng_work` WHERE `acct`='$acct' && `see`='1'")->fetch();
     if($count[0][0]!=0){
     ?>
     <div class="row justify-content-center">
@@ -427,7 +427,7 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
         <div class="col-12 col-sm-10 col-md-12 col-lg-8">
             <div class="card text-white bg-secondary mb-2">
                 <div class="portfolio card-body text-center">
-                作品集
+                Portfolio
                 </div>
             </div>
         </div>
@@ -440,7 +440,7 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
         <div class="col-12 col-sm-10 col-md-12 col-lg-8">
             <div class="work row">
             <?php
-            $work=searchAll("work",["acct"=>"$acct", "see"=>"1"]);
+            $work=searchAll("eng_work",["acct"=>"$acct", "see"=>"1"]);
             foreach($work as $value) {
             ?>
                 <div class="col-12 col-sm-10 col-md-6 col-lg-4 mb-4">
@@ -448,7 +448,7 @@ $edu=searchAll("edu",["acct"=>"$acct", "see"=>"1"]," ORDER BY id DESC");
                         <img src="./img/<?=$value['filename'];?>" class="card-img-top" alt="<?=$value['filename'];?>">
                         <div class="card-body">
                             <h6 class="card-title"><?=$value['name'];?></h6>
-                            <a href="<?=$value['url'];?>" class="btn btn-outline-secondary" target="_blank">前往網站</a>
+                            <a href="<?=$value['url'];?>" class="btn btn-outline-secondary" target="_blank">Check It Out</a>
                         </div>
                     </div>
                 </div>

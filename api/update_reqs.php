@@ -10,7 +10,7 @@ $reqs_type=$_POST['upt_reqs_type'];
 $reqs_pay=$_POST['upt_reqs_pay'];
 $id=$_POST['upt_id'];
 
-$sql="UPDATE `reqs` SET `see`='$see',
+$sql="UPDATE `eng_reqs` SET `see`='$see',
 `reqs_posit`='$reqs_posit',
 `reqs_jd`='$reqs_jd',
 `reqs_time`='$reqs_time',

@@ -11,10 +11,10 @@ if(!empty($_FILES) AND $_FILES['file']['error']==0) {
     $filename=$_FILES['file']['name'];
     move_uploaded_file($_FILES['file']['tmp_name'],"../img/".$filename);
 
-    $sql="UPDATE `img` SET `see`='$see', `alt`='$alt', `filename`='$filename' WHERE `id`='$id'";
+    $sql="UPDATE `eng_img` SET `see`='$see', `alt`='$alt', `filename`='$filename' WHERE `id`='$id'";
     $pdo->exec($sql);
 }else{
-    $sql="UPDATE `img` SET `see`='$see', `alt`='$alt' WHERE `id`='$id'";
+    $sql="UPDATE `eng_img` SET `see`='$see', `alt`='$alt' WHERE `id`='$id'";
     $pdo->exec($sql);
 }
 

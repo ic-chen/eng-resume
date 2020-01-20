@@ -13,7 +13,7 @@ $sch=$_POST['sch'];
 $dept=$_POST['dept'];
 $grad_st=$_POST['grad_st'];
 
-$sql="INSERT INTO `edu`(`acct`, `grad_t`, `sch`, `dept`, `grad_st`) 
+$sql="INSERT INTO `	eng_edu`(`acct`, `grad_t`, `sch`, `dept`, `grad_st`) 
 VALUES ('$acct','$grad_t','$sch','$dept','$grad_st')";
 
 echo $sql;

@@ -11,7 +11,7 @@ if(!empty($_FILES) AND $_FILES['img']['error']==0) {
     $acct=$data['acct'];
     $alt=$_POST['alt'];
 
-    $sql="INSERT INTO `img`(`acct`,`filename`,`alt`) 
+    $sql="INSERT INTO `eng_img`(`acct`,`filename`,`alt`) 
     VALUES ('$acct','$filename','$alt')";
 
     echo $sql;

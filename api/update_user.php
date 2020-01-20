@@ -12,7 +12,7 @@ $tel_home=$_POST['tel_home'];
 $addr=$_POST['addr'];
 $upt_time=date("Y-m-d H-i-s");
 
-$sql="UPDATE `user` SET `psw`='$psw',`name`='$name',`gender`='$gender',`btd`='$btd',`email`='$email',`tel_cell`='$tel_cell',`tel_home`='$tel_home',`addr`='$addr',`upt_time`='$upt_time' WHERE `id`='$id'";
+$sql="UPDATE `eng_user` SET `psw`='$psw',`name`='$name',`gender`='$gender',`btd`='$btd',`email`='$email',`tel_cell`='$tel_cell',`tel_home`='$tel_home',`addr`='$addr',`upt_time`='$upt_time' WHERE `id`='$id'";
 
 $pdo->exec($sql);
 ?>

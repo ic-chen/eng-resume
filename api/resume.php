@@ -11,7 +11,7 @@ function randomnum($length) {
     }
     $page=hash("sha256", $num);
     $id=$_SESSION['id'];
-    $sql="UPDATE `user` SET `page`='$page' WHERE `id`='$id'";
+    $sql="UPDATE `eng_user` SET `page`='$page' WHERE `id`='$id'";
     // echo $sql;
     $pdo->exec($sql);
     return $page;

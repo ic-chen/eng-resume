@@ -4,7 +4,7 @@ include_once "db_info.php";
 $acct=$_POST['acct'];
 $psw=$_POST['psw'];
 
-$sql="SELECT * FROM `user` 
+$sql="SELECT * FROM `eng_user` 
 WHERE `acct`='$acct' AND `psw`='$psw'";
 
 echo $sql;

@@ -8,7 +8,7 @@ $level=$_POST['level'];
 $des=$_POST['des'];
 $id=$_POST['upt_id'];
 
-$sql="UPDATE `skill` SET `see`='$see',`cat`='$cat',`skill`='$skill',`level`='$level',`des`='$des' WHERE `id`='$id'";
+$sql="UPDATE `eng_skill` SET `see`='$see',`cat`='$cat',`skill`='$skill',`level`='$level',`des`='$des' WHERE `id`='$id'";
 
 echo $sql;
 

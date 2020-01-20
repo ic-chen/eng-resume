@@ -59,10 +59,10 @@
                 <div class="form-group col-md-3">
                     <label for="inputGrad_st">畢業狀態</label>
                     <select id="inputGrad_st" name="grad_st" class="form-control">
-                    <option selected>畢業</option>
-                    <option>肆業</option>
-                    <option>修業</option>
-                    <option>結業</option>
+                    <option selected>Graduated</option>
+                    <option>Studied</option>
+                    <option>Enrolled</option>
+                    <option>Completed</option>
                     </select>
                 </div>
             </div>
@@ -112,9 +112,9 @@ $(function(){
         $('input.del-btn').on('click',function(){
             let del_id=($(this).prev().attr('id'))
             let table='edu'
-            $.post('./api/del.php',{del_id,table},function(){
+            $.post('./api/del.php',{del_id,table},function(data){
+                window.location.replace("./admin.php?p=ed")
             })
-            window.location.replace("./admin.php?p=ed")
         })
     })
 })

@@ -1,5 +1,5 @@
 <?php
-$dsn="mysql:host=localhost;dbname=resume;charset=utf8";
+$dsn="mysql:host=localhost;dbname=engresume;charset=utf8";
 $pdo=new PDO($dsn,"root","");
 session_start();
 ?>

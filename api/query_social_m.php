@@ -3,13 +3,13 @@ include_once "db_info.php";
 
 $id=$_SESSION['id'];
 
-$sql="SELECT * FROM `user` WHERE `id`='$id'";
+$sql="SELECT * FROM `eng_user` WHERE `id`='$id'";
 
 $data=$pdo->query($sql)->fetch();
 
 $acct=$data['acct'];
 
-$sql="SELECT * FROM `social_m` WHERE `acct`='$acct'";
+$sql="SELECT * FROM `eng_social_m` WHERE `acct`='$acct'";
 
 $s_m=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 

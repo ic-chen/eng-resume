@@ -15,7 +15,7 @@ $github=$_POST['github'];
 $youtube=$_POST['youtube'];
 $twitter=$_POST['twitter'];
 
-$sql="INSERT INTO `social_m`(`acct`, `fb`, `ig`, `linkedin`, `github`, `youtube`, `twitter`) VALUES ('$acct','$fb','$ig','$linkedin','$github','$youtube','$twitter')";
+$sql="INSERT INTO `eng_social_m`(`acct`, `fb`, `ig`, `linkedin`, `github`, `youtube`, `twitter`) VALUES ('$acct','$fb','$ig','$linkedin','$github','$youtube','$twitter')";
 
 echo $sql;
 $pdo->exec($sql);

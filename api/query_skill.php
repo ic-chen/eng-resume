@@ -3,13 +3,13 @@ include_once "db_info.php";
 
 $id=$_SESSION['id'];
 
-$sql="SELECT * FROM `user` WHERE `id`='$id'";
+$sql="SELECT * FROM `eng_user` WHERE `id`='$id'";
 
 $data=$pdo->query($sql)->fetch();
 
 $acct=$data['acct'];
 
-$sql="SELECT * FROM `skill` WHERE `acct`='$acct'";
+$sql="SELECT * FROM `eng_skill` WHERE `acct`='$acct'";
 
 $ability=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
@@ -42,21 +42,21 @@ $num++;
     <div class="form-group col-md-12">
         <label for="inputCat">類別</label>
         <select id="inputCat" class="form-control">
-            <option <?=($cat=="財務會計")?"selected":"";?>>財務會計</option>
-            <option <?=($cat=="人事/行政/法務")?"selected":"";?>>人事/行政/法務</option>
-            <option <?=($cat=="管理類")?"selected":"";?>>管理類</option>
-            <option <?=($cat=="金融保險")?"selected":"";?>>金融保險</option>
-            <option <?=($cat=="行銷/企劃")?"selected":"";?>>行銷/企劃</option>
-            <option <?=($cat=="客服/門市/業務/貿易")?"selected":"";?>>客服/門市/業務/貿易</option>
-            <option <?=($cat=="美容美髮")?"selected":"";?>>美容美髮</option>
-            <option <?=($cat=="餐飲旅遊")?"selected":"";?>>餐飲旅遊</option>
-            <option <?=($cat=="資訊網路")?"selected":"";?>>資訊網路</option>
-            <option <?=($cat=="電子電機")?"selected":"";?>>電子電機</option>
-            <option <?=($cat=="化學/化工/醫藥")?"selected":"";?>>化學/化工/醫藥</option>
-            <option <?=($cat=="交通運輸")?"selected":"";?>>交通運輸</option>
-            <option <?=($cat=="生產/製程")?"selected":"";?>>生產/製程</option>
-            <option <?=($cat=="設計/美工")?"selected":"";?>>設計/美工</option>
-            <option <?=($cat=="語言")?"selected":"";?>>語言</option>
+            <option <?=($cat=="Finance/Accounting")?"selected":"";?>>Finance/Accounting</option>
+            <option <?=($cat=="HR/Admin/Legal")?"selected":"";?>>HR/Admin/Legal</option>
+            <option <?=($cat=="Management")?"selected":"";?>>Management</option>
+            <option <?=($cat=="Banking/Insurance")?"selected":"";?>>Banking/Insurance</option>
+            <option <?=($cat=="Marketing/Plan")?"selected":"";?>>Marketing/Plan</option>
+            <option <?=($cat=="Service/Sales/Trade")?"selected":"";?>>Service/Sales/Trade</option>
+            <option <?=($cat=="Cosmetology/Hairdressing")?"selected":"";?>>Cosmetology/Hairdressing</option>
+            <option <?=($cat=="Catering/Tourism")?"selected":"";?>>Catering/Tourism</option>
+            <option <?=($cat=="IT/Network")?"selected":"";?>>IT/Network</option>
+            <option <?=($cat=="Electronic/Electrical")?"selected":"";?>>Electronic/Electrical</option>
+            <option <?=($cat=="Chemical/Medical")?"selected":"";?>>Chemical/Medical</option>
+            <option <?=($cat=="Transportation")?"selected":"";?>>Transportation</option>
+            <option <?=($cat=="Manufacturing")?"selected":"";?>>Manufacturing</option>
+            <option <?=($cat=="Design/Art")?"selected":"";?>>Design/Art</option>
+            <option <?=($cat=="Language")?"selected":"";?>>Language</option>
         </select>
     </div>
 </div>

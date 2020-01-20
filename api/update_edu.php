@@ -8,7 +8,7 @@ $dept=$_POST['upt_dept'];
 $grad_st=$_POST['upt_grad_st'];
 $id=$_POST['upt_id'];
 
-$sql="UPDATE `edu` SET `see`='$see',`grad_t`='$grad_t',`sch`='$sch',`dept`='$dept',`grad_st`='$grad_st' WHERE `id`='$id'";
+$sql="UPDATE `	eng_edu` SET `see`='$see',`grad_t`='$grad_t',`sch`='$sch',`dept`='$dept',`grad_st`='$grad_st' WHERE `id`='$id'";
 
 echo $sql;
 

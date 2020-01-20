@@ -11,7 +11,7 @@ $tel_cell=$_POST['tel_cell'];
 $tel_home=$_POST['tel_home'];
 $addr=$_POST['addr'];
 
-$sql="INSERT INTO `user`(`acct`, `psw`, `name`, `gender`, `btd`, `email`, `tel_cell`, `tel_home`, `addr`) 
+$sql="INSERT INTO `eng_user`(`acct`, `psw`, `name`, `gender`, `btd`, `email`, `tel_cell`, `tel_home`, `addr`) 
 VALUES ('$acct', '$psw', '$name', '$gender', '$btd', '$email', '$tel_cell', '$tel_home', '$addr')";
 
 // echo $sql;

@@ -6,7 +6,7 @@ $s_intro=$_POST['upt_s_intro'];
 $bio=$_POST['upt_bio'];
 $id=$_POST['upt_id'];
 
-$sql="UPDATE `s_intro` SET `see`='$see',`s_intro`='$s_intro', `bio`='$bio' WHERE `id`='$id'";
+$sql="UPDATE `eng_s_intro` SET `see`='$see',`s_intro`='$s_intro', `bio`='$bio' WHERE `id`='$id'";
 
 echo $sql;
 

@@ -3,13 +3,13 @@ include_once "db_info.php";
 
 $id=$_SESSION['id'];
 
-$sql="SELECT * FROM `user` WHERE `id`='$id'";
+$sql="SELECT * FROM `eng_user` WHERE `id`='$id'";
 
 $data=$pdo->query($sql)->fetch();
 
 $acct=$data['acct'];
 
-$sql="SELECT * FROM `edu` WHERE `acct`='$acct'";
+$sql="SELECT * FROM `eng_edu` WHERE `acct`='$acct'";
 
 $edu=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
@@ -46,10 +46,10 @@ $num++;
     <div class="form-group col-md-3">
         <label for="inputGrad_st">畢業狀態</label>
     <select id="inputGrad_st" class="form-control">
-        <option <?=($grad_st=="畢業")?"selected":"";?>>畢業</option>
-        <option <?=($grad_st=="肆業")?"selected":"";?>>肆業</option>
-        <option <?=($grad_st=="修業")?"selected":"";?>>修業</option>
-        <option <?=($grad_st=="結業")?"selected":"";?>>結業</option>
+        <option <?=($grad_st=="Graduated")?"selected":"";?>>Graduated</option>
+        <option <?=($grad_st=="Studied")?"selected":"";?>>Studied</option>
+        <option <?=($grad_st=="Enrolled")?"selected":"";?>>Enrolled</option>
+        <option <?=($grad_st=="Completed")?"selected":"";?>>Completed</option>
     </select>
     </div>
 </div>
@@ -71,7 +71,7 @@ $num++;
 </div>
 
 <!-- 按鈕列 -->
-<input type="button" value="更新" class="upt-btn btn btn-primary" id="$edu_id">
+<input type="button" value="更新" class="upt-btn btn btn-primary" id="<?=$edu_id;?>">
 <input type="button" value="刪除" class="del-btn btn btn-primary">
 
 <!-- 收尾標籤 -->

@@ -15,7 +15,7 @@ $reqs_place=$_POST['reqs_place'];
 $reqs_type=$_POST['reqs_type'];
 $reqs_pay=$_POST['reqs_pay'];
 
-$sql="INSERT INTO `reqs`(`acct`, `reqs_posit`, `reqs_jd`, `reqs_time`, `reqs_place`, `reqs_type`, `reqs_pay`) 
+$sql="INSERT INTO `eng_reqs`(`acct`, `reqs_posit`, `reqs_jd`, `reqs_time`, `reqs_place`, `reqs_type`, `reqs_pay`) 
 VALUES ('$acct','$reqs_posit','$reqs_jd','$reqs_time','$reqs_place','$reqs_type','$reqs_pay')";
 
 echo $sql;

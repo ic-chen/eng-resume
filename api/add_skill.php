@@ -13,7 +13,7 @@ $skill=$_POST['skill'];
 $level=$_POST['level'];
 $des=$_POST['des'];
 
-$sql="INSERT INTO `skill`(`acct`, `cat`, `skill`, `des`, `level`) 
+$sql="INSERT INTO `eng_skill`(`acct`, `cat`, `skill`, `des`, `level`) 
 VALUES ('$acct','$cat','$skill','$des','$level')";
 
 echo $sql;

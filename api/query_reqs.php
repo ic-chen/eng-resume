@@ -3,13 +3,13 @@ include_once "db_info.php";
 
 $id=$_SESSION['id'];
 
-$sql="SELECT * FROM `user` WHERE `id`='$id'";
+$sql="SELECT * FROM `eng_user` WHERE `id`='$id'";
 
 $data=$pdo->query($sql)->fetch();
 
 $acct=$data['acct'];
 
-$sql="SELECT * FROM `reqs` WHERE `acct`='$acct'";
+$sql="SELECT * FROM `eng_reqs` WHERE `acct`='$acct'";
 
 $reqs=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
@@ -60,12 +60,12 @@ $num++;
   <div class="form-group col-md-12" id="reqs_t<?=$num;?>">
     <label for="inputReqs_t<?=$num;?>">可上班時間</label>
     <select id="inputReqs_t<?=$num;?>" class="inputReqs_t1 form-control">
-    <option <?=($reqs_time=="隨時")?"selected":"";;?>>隨時</option>
-    <option <?=($reqs_time=="錄取後一週內")?"selected":"";?>>錄取後一週內</option>
-    <option <?=($reqs_time=="錄取後兩週內")?"selected":"";?>>錄取後兩週內</option>
-    <option <?=($reqs_time=="錄取後三週內")?"selected":"";?>>錄取後三週內</option>
-    <option <?=($reqs_time=="錄取後一個月內")?"selected":"";?>>錄取後一個月內</option>
-    <option>其他</option>
+    <option <?=($reqs_time=="Any")?"selected":"";?>>Any</option>
+    <option <?=($reqs_time=="1 week")?"selected":"";?>>1 week</option>
+    <option <?=($reqs_time=="2 weeks")?"selected":"";?>>2 weeks</option>
+    <option <?=($reqs_time=="3 weeks")?"selected":"";?>>3 weeks</option>
+    <option <?=($reqs_time=="1 month")?"selected":"";?>>1 month</option>
+    <option>Other</option>
     </select>
   </div>
 <!-- 選「其他」後顯示，預設隱藏 -->
@@ -88,8 +88,8 @@ $num++;
     <div class="form-group col-md-6">
         <label for="inputReqs_type<?=$num;?>">期望工作性質</label>
         <select id="inputReqs_type<?=$num;?>" class="form-control">
-        <option <?=($reqs_type=="全職")?"selected":"";?>>全職</option>
-        <option <?=($reqs_type=="兼職")?"selected":"";?>>兼職</option>
+        <option <?=($reqs_type=="Full-time")?"selected":"";?>>Full-time</option>
+        <option <?=($reqs_type=="Part-time")?"selected":"";?>>Part-time</option>
         </select>
     </div>
     <div class="form-group col-md-6">

@@ -8,7 +8,7 @@ $posit=$_POST['upt_posit'];
 $jd=$_POST['upt_jd'];
 $id=$_POST['upt_id'];
 
-$sql="UPDATE `exp` SET `see`='$see',`dur`='$dur',`corp`='$corp',`posit`='$posit',`jd`='$jd' WHERE `id`='$id'";
+$sql="UPDATE `eng_exp` SET `see`='$see',`dur`='$dur',`corp`='$corp',`posit`='$posit',`jd`='$jd' WHERE `id`='$id'";
 
 echo $sql;
 

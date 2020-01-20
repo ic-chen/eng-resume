@@ -11,7 +11,7 @@ $acct=$data['acct'];
 $s_intro=$_POST['s_intro'];
 $bio=$_POST['bio'];
 
-$sql="INSERT INTO `s_intro`(`acct`, `s_intro`,`bio`) 
+$sql="INSERT INTO `eng_s_intro`(`acct`, `s_intro`,`bio`) 
 VALUES ('$acct','$s_intro','$bio')";
 
 echo $sql;

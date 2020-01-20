@@ -13,7 +13,7 @@ $corp=$_POST['corp'];
 $posit=$_POST['posit'];
 $jd=$_POST['jd'];
 
-$sql="INSERT INTO `exp`(`acct`, `dur`, `corp`, `posit`, `jd`) 
+$sql="INSERT INTO `eng_exp`(`acct`, `dur`, `corp`, `posit`, `jd`) 
 VALUES ('$acct','$dur','$corp','$posit','$jd')";
 
 echo $sql;

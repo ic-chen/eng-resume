@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2020-01-08 14:26:50
+-- 產生時間： 2020-01-20 15:12:01
 -- 伺服器版本： 10.4.6-MariaDB
 -- PHP 版本： 7.3.9
 
@@ -19,16 +19,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `resume`
+-- 資料庫： `engresume`
 --
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `edu`
+-- 資料表結構 `eng_edu`
 --
 
-CREATE TABLE `edu` (
+CREATE TABLE `eng_edu` (
   `id` int(11) NOT NULL,
   `acct` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '帳號',
   `see` tinyint(1) NOT NULL DEFAULT 0 COMMENT '可見',
@@ -39,20 +39,19 @@ CREATE TABLE `edu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `edu`
+-- 傾印資料表的資料 `eng_edu`
 --
 
-INSERT INTO `edu` (`id`, `acct`, `see`, `grad_t`, `grad_st`, `sch`, `dept`) VALUES
-(1, 'admin', 1, '2004 ~ 2008', '畢業', '淡江大學', '英文學系'),
-(2, 'admin', 1, '2099 ~ 2099', '肆業', '一二三大學', '一二三系');
+INSERT INTO `eng_edu` (`id`, `acct`, `see`, `grad_t`, `grad_st`, `sch`, `dept`) VALUES
+(1, 'admin', 1, '2004 ~ 2008', 'Graduated', 'Tamkang University', 'Department of English');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `exp`
+-- 資料表結構 `eng_exp`
 --
 
-CREATE TABLE `exp` (
+CREATE TABLE `eng_exp` (
   `id` int(20) NOT NULL,
   `acct` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '帳號',
   `see` tinyint(1) NOT NULL DEFAULT 0 COMMENT '可見',
@@ -63,22 +62,22 @@ CREATE TABLE `exp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `exp`
+-- 傾印資料表的資料 `eng_exp`
 --
 
-INSERT INTO `exp` (`id`, `acct`, `see`, `dur`, `corp`, `posit`, `jd`) VALUES
-(1, 'admin', 1, '2010/10 ~ 2012/03 (1年5個月)', '中茂文化有限公司', '中文化專案管理', '負責國外供應商及客戶的書信，以及負責往返聯絡、管理技術文件、翻譯專業文件。'),
-(2, 'admin', 1, '2012/04 ~ 2015/02 (2年11個月)', '中茂文化有限公司', '自由譯者', '技術文件、社群遊戲等等的編輯與翻譯。'),
-(3, 'admin', 1, '2015/04 ~ 2019/04 (4年1個月)', '易韋有限公司', '全職英翻中資深編譯', '英翻中的翻譯、審稿。'),
-(4, 'admin', 1, '2015/04 ~ 2019/09 (4年6個月)', '英商思迪股份有限公司', '自由譯者', '英翻中的翻譯、審稿。');
+INSERT INTO `eng_exp` (`id`, `acct`, `see`, `dur`, `corp`, `posit`, `jd`) VALUES
+(1, 'admin', 1, '2010/10 ~ 2012/03 (1 y 5 m)', 'Asialoc Corporation', 'Project Manager', 'Responsible for contacting suppliers and clients, managing localization projects, maintaining technical documents and supporting some translation tasks.'),
+(2, 'admin', 1, '2012/04 ~ 2015/02 (2 y 11 m)', 'Asialoc Corporation', 'Freelancer translator', 'Translate/localize technical documents and social networking games from English to Traditional Chinese.'),
+(3, 'admin', 1, '2015/04 ~ 2019/04 (4 y 1 m)', 'WeastO Localization', 'In-house editor', 'Translate and review IT/marketing documents.'),
+(4, 'admin', 1, '2015/04 ~ 2019/09 (4 y 6 m)', 'SDL plc', 'Freelancer translator', '');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `img`
+-- 資料表結構 `eng_img`
 --
 
-CREATE TABLE `img` (
+CREATE TABLE `eng_img` (
   `id` int(11) NOT NULL,
   `acct` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `see` tinyint(1) NOT NULL DEFAULT 0,
@@ -87,21 +86,21 @@ CREATE TABLE `img` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `img`
+-- 傾印資料表的資料 `eng_img`
 --
 
-INSERT INTO `img` (`id`, `acct`, `see`, `filename`, `alt`) VALUES
+INSERT INTO `eng_img` (`id`, `acct`, `see`, `filename`, `alt`) VALUES
 (1, 'admin', 1, '23d50e04b0c3027b.jpg', '企鵝'),
 (2, 'admin', 0, '7e7cd0b1jw1f811tiddxqj20fa0egdhz.jpg', '貓熊'),
-(4, 'admin', 0, 'wzLgOqh - Imgur.jpg', '企鵝');
+(4, 'admin', 0, 'wzLgOqh - Imgur.jpg', '123');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `reqs`
+-- 資料表結構 `eng_reqs`
 --
 
-CREATE TABLE `reqs` (
+CREATE TABLE `eng_reqs` (
   `id` int(11) NOT NULL,
   `acct` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '帳號',
   `see` tinyint(1) NOT NULL DEFAULT 0 COMMENT '可見',
@@ -114,45 +113,46 @@ CREATE TABLE `reqs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `reqs`
+-- 傾印資料表的資料 `eng_reqs`
 --
 
-INSERT INTO `reqs` (`id`, `acct`, `see`, `reqs_posit`, `reqs_jd`, `reqs_time`, `reqs_type`, `reqs_place`, `reqs_pay`) VALUES
-(1, 'admin', 1, '全端/前端/後端網頁設計人員', '依照電腦輸入與輸出之多媒體功能，進行綜合設計，並用電腦網頁設計語言撰寫程式。', '隨時', '全職', '雙北地區', '38,000/月'),
-(2, 'admin', 0, '中文化翻譯人員', '商業書信、契約、網站、商品介紹、型錄、新聞稿、操作說明書、觀光文章、系統介面等英翻中案件。', '隨時', '全職', '雙北地區', '38,000/月');
+INSERT INTO `eng_reqs` (`id`, `acct`, `see`, `reqs_posit`, `reqs_jd`, `reqs_time`, `reqs_type`, `reqs_place`, `reqs_pay`) VALUES
+(1, 'admin', 1, 'Web developer (Front-end, Back-end or Both)', 'Responsible for the coding, design and layout of a website or a application according to a company’s specifications.', 'Any', 'Full-time', 'New Taipei and Taipei City', '38,000 NTD/month');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `skill`
+-- 資料表結構 `eng_skill`
 --
 
-CREATE TABLE `skill` (
+CREATE TABLE `eng_skill` (
   `id` int(11) NOT NULL,
   `acct` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '帳號',
   `see` tinyint(1) NOT NULL DEFAULT 0 COMMENT '可見',
   `cat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '分類',
   `skill` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '技能',
-  `level` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '程度'
+  `level` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '程度',
+  `des` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '說明'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `skill`
+-- 傾印資料表的資料 `eng_skill`
 --
 
-INSERT INTO `skill` (`id`, `acct`, `see`, `cat`, `skill`, `level`) VALUES
-(1, 'admin', 1, '語言', '英文', 'TOEIC 金色'),
-(2, 'admin', 1, '語言', '中文', '母語'),
-(3, 'admin', 1, '設計/美工', 'Photoshop', '大致熟悉'),
-(4, 'admin', 1, '設計/美工', 'Illustrator', '基本操作');
+INSERT INTO `eng_skill` (`id`, `acct`, `see`, `cat`, `skill`, `level`, `des`) VALUES
+(1, 'admin', 1, 'Language', 'English', '80%', 'TOEIC 865'),
+(3, 'admin', 1, 'Design/Art', 'Photoshop', '80%', 'Familiar with basic functions.'),
+(4, 'admin', 1, 'Design/Art', 'Illustrator', '60%', 'Basic manipulation.'),
+(6, 'admin', 1, 'IT/Network', 'PHP/MySQL', '70%', ''),
+(7, 'admin', 1, 'IT/Network', 'JavaScript/JQ/AJAX', '60%', '');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `social_m`
+-- 資料表結構 `eng_social_m`
 --
 
-CREATE TABLE `social_m` (
+CREATE TABLE `eng_social_m` (
   `id` int(11) NOT NULL,
   `acct` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '帳號',
   `see` tinyint(1) NOT NULL DEFAULT 0 COMMENT '可見',
@@ -165,19 +165,19 @@ CREATE TABLE `social_m` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `social_m`
+-- 傾印資料表的資料 `eng_social_m`
 --
 
-INSERT INTO `social_m` (`id`, `acct`, `see`, `fb`, `ig`, `linkedin`, `github`, `youtube`, `twitter`) VALUES
+INSERT INTO `eng_social_m` (`id`, `acct`, `see`, `fb`, `ig`, `linkedin`, `github`, `youtube`, `twitter`) VALUES
 (1, 'admin', 1, '', '', 'http://www.linkedin.com/in/irmachen', 'http://github.com/ic-chen', '', '');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `s_intro`
+-- 資料表結構 `eng_s_intro`
 --
 
-CREATE TABLE `s_intro` (
+CREATE TABLE `eng_s_intro` (
   `id` int(11) NOT NULL,
   `acct` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '帳號',
   `see` tinyint(1) NOT NULL DEFAULT 0 COMMENT '可見',
@@ -186,20 +186,19 @@ CREATE TABLE `s_intro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `s_intro`
+-- 傾印資料表的資料 `eng_s_intro`
 --
 
-INSERT INTO `s_intro` (`id`, `acct`, `see`, `s_intro`, `bio`) VALUES
-(1, 'admin', 1, '中文化譯者、網頁設計初學者', '在中文化翻譯領域有十年的工作經驗，目前正在慢慢學習網頁和程式設計，希望可以開拓出不一樣的人生。'),
-(2, 'admin', 0, '中文化譯者、資深編譯', '能依循行業常規翻譯出流暢之中文、熟悉各種 CAT 翻譯工具，並具備 TOEIC 金色證書。');
+INSERT INTO `eng_s_intro` (`id`, `acct`, `see`, `s_intro`, `bio`) VALUES
+(1, 'admin', 1, 'Localization translator & Web design beginner', '10 years’ work experience in localization industry. Recently started learning web design and program coding, hoping to turn the page and start a new chapter of life.');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `user`
+-- 資料表結構 `eng_user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `eng_user` (
   `id` int(11) NOT NULL,
   `acct` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '帳號',
   `psw` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '密碼',
@@ -216,19 +215,19 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `user`
+-- 傾印資料表的資料 `eng_user`
 --
 
-INSERT INTO `user` (`id`, `acct`, `psw`, `name`, `gender`, `btd`, `email`, `tel_cell`, `tel_home`, `addr`, `page`, `reg_time`, `upt_time`) VALUES
-(1, 'admin', 'admin', '陳怡婷', '女性', '1986-07-09', 'irma_chen79@hotmail.com', '0929-810-875', '', '新北市永和區', '1dbbabe92f1fdcaa45c0ef1e7af2dca701c821ee8fd15e2264cd658d98a7b291', '2019-12-11 03:21:24', '2019-12-13 02:03:23');
+INSERT INTO `eng_user` (`id`, `acct`, `psw`, `name`, `gender`, `btd`, `email`, `tel_cell`, `tel_home`, `addr`, `page`, `reg_time`, `upt_time`) VALUES
+(1, 'admin', 'admin', 'Chen Yi Ting', '女性', '1986-07-09', 'irma_chen79@hotmail.com', '0929-810-875', '', 'New Taipei City', '14256cf0f9e8fdea022563216aca45711816406a5894145ccd48d2a1794199e1', '2019-12-11 03:21:24', '2020-01-20 05:32:38');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `work`
+-- 資料表結構 `eng_work`
 --
 
-CREATE TABLE `work` (
+CREATE TABLE `eng_work` (
   `id` int(20) NOT NULL,
   `acct` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '帳號',
   `see` tinyint(1) NOT NULL DEFAULT 1 COMMENT '可見',
@@ -238,72 +237,73 @@ CREATE TABLE `work` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `work`
+-- 傾印資料表的資料 `eng_work`
 --
 
-INSERT INTO `work` (`id`, `acct`, `see`, `filename`, `name`, `url`) VALUES
-(1, 'admin', 1, 'screenshot.jpg', '匯率走勢查詢 (RWD)', 'http://220.128.133.15/s1080318/rateTrend/'),
-(3, 'admin', 1, 'ShootingStars.jpg', '星星射擊遊戲 (RWD)', 'http://220.128.133.15/s1080318/ShootingStars/'),
-(4, 'admin', 1, 'FlipCards.jpg', '翻牌遊戲 (RWD)', 'http://220.128.133.15/s1080318/FlipCards/'),
-(5, 'admin', 1, 'clock.jpg', '時鐘 (RWD)', 'http://220.128.133.15/s1080318/clock/'),
-(6, 'admin', 1, 'calendar.jpg', '月曆', 'http://220.128.133.15/s1080318/Calendar/');
+INSERT INTO `eng_work` (`id`, `acct`, `see`, `filename`, `name`, `url`) VALUES
+(1, 'admin', 1, 'screenshot.jpg', 'Exchange rate trend (RWD)', 'http://220.128.133.15/s1080318/rateTrend/'),
+(3, 'admin', 1, 'ShootingStars.jpg', 'Shooting stars game (RWD)', 'http://220.128.133.15/s1080318/ShootingStars/'),
+(4, 'admin', 1, 'FlipCards.jpg', 'Card flipping game (RWD)', 'http://220.128.133.15/s1080318/FlipCards/'),
+(5, 'admin', 1, 'clock.jpg', 'Clock (RWD)', 'http://220.128.133.15/s1080318/clock/'),
+(6, 'admin', 1, 'calendar.jpg', 'Calendar', 'http://220.128.133.15/s1080318/Calendar/'),
+(8, 'admin', 1, '01.jpg', 'Resume builder (RWD)', 'http://220.128.133.15/s1080318/resume');
 
 --
 -- 已傾印資料表的索引
 --
 
 --
--- 資料表索引 `edu`
+-- 資料表索引 `eng_edu`
 --
-ALTER TABLE `edu`
+ALTER TABLE `eng_edu`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `exp`
+-- 資料表索引 `eng_exp`
 --
-ALTER TABLE `exp`
+ALTER TABLE `eng_exp`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `img`
+-- 資料表索引 `eng_img`
 --
-ALTER TABLE `img`
+ALTER TABLE `eng_img`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `reqs`
+-- 資料表索引 `eng_reqs`
 --
-ALTER TABLE `reqs`
+ALTER TABLE `eng_reqs`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `skill`
+-- 資料表索引 `eng_skill`
 --
-ALTER TABLE `skill`
+ALTER TABLE `eng_skill`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `social_m`
+-- 資料表索引 `eng_social_m`
 --
-ALTER TABLE `social_m`
+ALTER TABLE `eng_social_m`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `s_intro`
+-- 資料表索引 `eng_s_intro`
 --
-ALTER TABLE `s_intro`
+ALTER TABLE `eng_s_intro`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `user`
+-- 資料表索引 `eng_user`
 --
-ALTER TABLE `user`
+ALTER TABLE `eng_user`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `work`
+-- 資料表索引 `eng_work`
 --
-ALTER TABLE `work`
+ALTER TABLE `eng_work`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -311,58 +311,58 @@ ALTER TABLE `work`
 --
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `edu`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `eng_edu`
 --
-ALTER TABLE `edu`
+ALTER TABLE `eng_edu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `exp`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `eng_exp`
 --
-ALTER TABLE `exp`
+ALTER TABLE `eng_exp`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `img`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `eng_img`
 --
-ALTER TABLE `img`
+ALTER TABLE `eng_img`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `reqs`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `eng_reqs`
 --
-ALTER TABLE `reqs`
+ALTER TABLE `eng_reqs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `skill`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `eng_skill`
 --
-ALTER TABLE `skill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `eng_skill`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `social_m`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `eng_social_m`
 --
-ALTER TABLE `social_m`
+ALTER TABLE `eng_social_m`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `s_intro`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `eng_s_intro`
 --
-ALTER TABLE `s_intro`
+ALTER TABLE `eng_s_intro`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `user`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `eng_user`
 --
-ALTER TABLE `user`
+ALTER TABLE `eng_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `work`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `eng_work`
 --
-ALTER TABLE `work`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `eng_work`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

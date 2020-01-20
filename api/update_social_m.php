@@ -10,7 +10,7 @@ $youtube=$_POST['upt_youtube'];
 $twitter=$_POST['upt_twitter'];
 $id=$_POST['upt_id'];
 
-$sql="UPDATE `social_m` SET `see`='$see',`fb`='$fb',`ig`='$ig',`linkedin`='$linkedin',`github`='$github',`youtube`='$youtube',`twitter`='$twitter' WHERE `id`='$id'";
+$sql="UPDATE `eng_social_m` SET `see`='$see',`fb`='$fb',`ig`='$ig',`linkedin`='$linkedin',`github`='$github',`youtube`='$youtube',`twitter`='$twitter' WHERE `id`='$id'";
 
 $pdo->exec($sql);
 ?>
